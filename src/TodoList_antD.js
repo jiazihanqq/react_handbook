@@ -1,9 +1,10 @@
 // 容器组件，负责页面的逻辑，聪明组件
 import React, {Component} from 'react';
 import 'antd/dist/antd.css'
+import axios from 'axios'
 import store from './store/index';
 import {ADD_TODO_ITEM, DEL_TODO_ITEM} from './store/actionTypes'
-import {getInputChangeAction, initListAction, getTodoList} from './store/actionCreator'
+import {getInputChangeAction, getInitList} from './store/actionCreator'
 import TodoList_antD_UI from './TodoList_antD_UI'
 
 class TodoList_antD extends Component {
@@ -30,11 +31,18 @@ class TodoList_antD extends Component {
             />
         );
     }
+
     // 使用redux-thunk实现异步函数与组件的剥离
     componentDidMount() {
-        const action = getTodoList();
+        // axios.get('/list.json').then((res) => {
+        //     const data = res.data;
+        //     const action = initListAction(data);
+        //     store.dispatch(action);
+        // })
+        const action = getInitList();
         store.dispatch(action);
     }
+
 
     /**
      * 在input内容发生变化的时候，修改store中的内容
