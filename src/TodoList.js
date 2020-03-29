@@ -129,7 +129,7 @@ class TodoList extends Component {
     // 其他的中间件 redux-thunk、redux-logger、redux-saga
 
     // redux-saga中间件
-
+    // react-redux的使用，参见react-redux分支
 
 
 
