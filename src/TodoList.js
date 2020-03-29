@@ -13,7 +13,7 @@ class TodoList extends Component {
                            type="text"
                            onChange={this.props.handleInputChange}
                     />
-                    <button onClick={this.handleClick.bind(this)}>提交</button>
+                    <button onClick={this.props.handleButtonClick}>提交</button>
                 </div>
                 <ul>
                     <li></li>
@@ -43,6 +43,12 @@ const mapDispatchToProps = (dispatch) => {
             const action = {
                 type: 'change_input_value',
                 value: e.target.value
+            };
+            dispatch(action);
+        },
+        handleButtonClick() {
+            const action = {
+                type: 'add_item'
             };
             dispatch(action);
         }
