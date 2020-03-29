@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 版本说明
 
-## Available Scripts
-
-In the project directory, you can run:
+- UI Component: UI组件和容器组件的划分
 
 ### `npm start`
 
